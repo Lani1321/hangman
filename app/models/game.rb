@@ -17,4 +17,20 @@ class Game
     selected_letters.select { |letter| !word.include?(letter) }.size
   end
 
+  # Convert word into an array of it's characters 
+  # Then subtract the selected letters from array
+  def guessed?
+    (word.split('') - selected_letters).empty?
+  end
+
+  def finished?
+    failed_attempts >= MAX_FAILED_ATTEMPTS || !guessed?
+  end
+
+  def select!(letter)
+    raise GameOverError if finished?
+    selected_letters << letter unless selected_letters.include? letter
+    word.include? letter
+  end
+
 end
