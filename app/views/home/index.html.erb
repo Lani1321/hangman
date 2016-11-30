@@ -11,9 +11,10 @@
         <% end %>
     </div>
 
-    <div class="small-12 medium-6 columns text-center">
-        <%= link_to game_path, :class => 'button expand' do %>
-            <i class="fa fa-refresh"> Continue game</i>
-        <% end %>
-    </div>
+    <% if current_game.present? && !current_game.finished? %>
+      <div class="small-12 medium-6 columns text-center">
+          <%= link_to game_path, :class => 'button expand' do %>
+              <i class="fa fa-refresh"> Continue game</i>
+          <% end %>
+      </div>
 </div>
