@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+# Use for icons and colors
+gem 'font-awesome-rails'
+# Use for responsive grids and buttons
+gem 'foundation-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
