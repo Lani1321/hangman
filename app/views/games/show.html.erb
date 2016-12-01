@@ -30,3 +30,23 @@
                 </div>
             </div>
         <% end %>
+
+        <%= form_for :game, :url => game_path, :method => :patch do |form| %>
+            <div class="row medium-6 columns">
+                <div class="letters">
+                    <% ('A'..'Z').each do |letter| %>
+            
+                        <%
+                            if current_game.selected_letters.include? letter
+                                button_class = current_game.word.include?(letter) ? 'success' : 'alert'
+                            end
+                        %>
+                        <div class="small-2 medium-2 columns text-center">
+                            <div class="letter">
+                                <%= form.submit letter, :name => 'letter', :class => "button expand #{button_class}" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
