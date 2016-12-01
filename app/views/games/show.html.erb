@@ -1,2 +1,18 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<div class="row">
+    <!-- <div class="small-12 medium-4 columns"> -->
+        <div id="gallows" class="gallows gallows-state-<%= current_game.failed_attempts %>">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <h1 class="word column align-self-top">
+            <% current_game.word.split('').each do |letter| %>
+                        
+                <%= current_game.finished? || current_game.selected_letters.include?(letter) ? letter : '_' %>
+                      
+            <% end %>
+        </h1>
+    </div>
+
+        
