@@ -50,3 +50,24 @@
                 </div>
             </div>
         <% end %>
+
+        <div class="row">
+            <div class="game-actions">
+                <!-- Decide if i want to take this line out -->
+                <div class="small-2 <%= current_game.finished? ? '' : 'medium-7' %> columns text-center">
+                    <%= link_to root_path(:method => :delete), :class => 'hollow button expand success' do %>
+                        <i class="fa fa-home"></i> Go Back
+                    <% end %>
+                </div>
+
+                <% unless current_game.finished? %>
+                    <div class="small-2 medium-4 columns">
+                        <%= link_to game_path, :class => 'hollow button expand alert', :method => :delete do %>
+                            <i class="fa fa-fire"></i> End game
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
