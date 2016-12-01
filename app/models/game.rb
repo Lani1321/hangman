@@ -8,8 +8,12 @@ class Game
   attr_accessor :word
   attr_accessor :selected_letters
 
+
+
   def initialize
-    @word = 'Hangman'.upcase
+    @words = %w"learning ruby education rails computer mobile javascript sinatra github html css light earth machine book
+    news yahoo google internet awesome slack america rogue angular jquery stack software"
+    @word = @words[rand(@words.length) - 1].upcase
     @selected_letters = []
   end
 
@@ -40,7 +44,7 @@ class Game
   end
 
   def finished?
-    failed_attempts >= MAX_FAILED_ATTEMPTS || !guessed?
+    failed_attempts >= MAX_FAILED_ATTEMPTS || guessed?
   end
 
   def select!(letter)
