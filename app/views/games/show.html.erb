@@ -15,4 +15,18 @@
         </h1>
     </div>
 
-        
+        <% if current_game.finished? %>
+            <div class="row game-status">
+                <div class="small-12 columns text-center">
+                    <% if current_game.guessed? %>
+                        <div id="notice_wrapper">
+                          <p class="alert">You Win!<br><%= link_to "Play again?", new_game_path %> </p></br>
+                        </div>
+                    <% else %>
+                        <div id="notice_wrapper">
+                          <p class="alert">Game Over <%= link_to "Try again?", new_game_path %> </p>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
