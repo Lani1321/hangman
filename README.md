@@ -1,24 +1,5 @@
-# README
+# Hangman
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hangman is a Rails application guessing game.  The game will select a random word and the user tries to guess it by suggesting letters within a certain number of guesses.  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To see it up and running: https://app-hangman.herokuapp.com/
